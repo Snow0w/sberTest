@@ -43,15 +43,15 @@ class SberTestApplicationTests {
 		recipe.setDescription("Описание процесса приготовления");
 		recipe.setIngredients(new ArrayList<Ingredient>());
 		recipe.getIngredients().add(new Ingredient(
-				"Черника", 500, "Гр", "Описание ингредиента"));
+				1, "Черника", 500, "Гр", "Описание ингредиента"));
 		recipe.getIngredients().add(new Ingredient(
-				"Мука", 160, "Гр", "Описание ингредиента"));
+				3, "Мука", 160, "Гр", "Описание ингредиента"));
 		recipe.getIngredients().add(new Ingredient(
-				"Яйцо", 4, "Шт", "Описание ингредиента"));
+				4, "Яйцо", 4, "Шт", "Описание ингредиента"));
 		recipe.getIngredients().add(new Ingredient(
-				"Соль", 1, "щепотка", "Описание ингредиента"));
+				5, "Соль", 1, "щепотка", "Описание ингредиента"));
 		recipe.getIngredients().add(new Ingredient(
-				"Caxaр", 1, "ч. ложка", "Описание ингредиента"));
+				6, "Caxaр", 1, "ч. ложка", "Описание ингредиента"));
 		var mapper = new ObjectMapper();
 		String expected = null;
 		expected = mapper.writeValueAsString(recipe);

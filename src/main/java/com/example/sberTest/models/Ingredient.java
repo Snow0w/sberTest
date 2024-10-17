@@ -1,15 +1,30 @@
 package com.example.sberTest.models;
 
+import jakarta.persistence.*;
+
+import java.util.List;
+
+@Entity(name = "Ingredient")
+@Table(name = "ingredient")
 public class Ingredient {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+    @Column(name = "name")
     private String name;
+    @Column(name = "quantity")
     private Integer quantity;
+    @Column(name = "measureUnit")
     private String measureUnit;
+    @Column(name = "description")
     private String description;
 
     public Ingredient() {
     }
 
-    public Ingredient(String name, Integer quantity, String measureUnit, String description) {
+    public Ingredient(Integer id, String name, Integer quantity, String measureUnit, String description) {
+        this.id = id;
         this.name = name;
         this.quantity = quantity;
         this.measureUnit = measureUnit;
