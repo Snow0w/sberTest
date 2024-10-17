@@ -28,9 +28,4 @@ public class RecipeController {
                 .body(recipe);
     }
 
-//    @GetMapping("/get/all")
-//    public List<Recipe> getAllRecipes() {
-//        return recipeService.getAllRecipes();
-//    }
-
 }

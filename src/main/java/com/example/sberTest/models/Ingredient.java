@@ -6,6 +6,16 @@ public class Ingredient {
     private String measureUnit;
     private String description;
 
+    public Ingredient() {
+    }
+
+    public Ingredient(String name, Integer quantity, String measureUnit, String description) {
+        this.name = name;
+        this.quantity = quantity;
+        this.measureUnit = measureUnit;
+        this.description = description;
+    }
+
     public String getName() {
         return name;
     }
