@@ -4,10 +4,10 @@ public class RecipeIngredientRaw {
     private String name;
     private Integer duration;
     private String description;
-    private String ingName;
+    private String ingname;
     private Integer quantity;
-    private Integer measureUnit;
-    private String ingDescription;
+    private String ingdescription;
+    private String measureunit;
 
 
     public Integer getDuration() {
@@ -26,20 +26,12 @@ public class RecipeIngredientRaw {
         this.description = description;
     }
 
-    public String getIngName() {
-        return ingName;
+    public String getIngname() {
+        return ingname;
     }
 
-    public void setIngName(String ingName) {
-        this.ingName = ingName;
-    }
-
-    public Integer getMeasureUnit() {
-        return measureUnit;
-    }
-
-    public void setMeasureUnit(Integer measureUnit) {
-        this.measureUnit = measureUnit;
+    public void setIngname(String ingname) {
+        this.ingname = ingname;
     }
 
     public Integer getQuantity() {
@@ -50,12 +42,12 @@ public class RecipeIngredientRaw {
         this.quantity = quantity;
     }
 
-    public String getIngDescription() {
-        return ingDescription;
+    public String getIngdescription() {
+        return ingdescription;
     }
 
-    public void setIngDescription(String ingDescription) {
-        this.ingDescription = ingDescription;
+    public void setIngdescription(String ingdescription) {
+        this.ingdescription = ingdescription;
     }
 
     public String getName() {
@@ -72,10 +64,16 @@ public class RecipeIngredientRaw {
                 "name='" + name + '\'' +
                 ", duration=" + duration +
                 ", description='" + description + '\'' +
-                ", ingName='" + ingName + '\'' +
+                ", ingName='" + ingname + '\'' +
                 ", quantity=" + quantity +
-                ", measureUnit=" + measureUnit +
-                ", ingDescription='" + ingDescription + '\'' +
+                ", measureUnit=" + measureunit +
+                ", ingDescription='" + ingdescription + '\'' +
                 '}';
     }
+
+    public void setMeasureunit(String measureunit) {
+        this.measureunit = measureunit;
+    }
+
+    public String getMeasureunit() {return measureunit;}
 }

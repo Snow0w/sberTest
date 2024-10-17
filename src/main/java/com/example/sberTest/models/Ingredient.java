@@ -3,7 +3,7 @@ package com.example.sberTest.models;
 public class Ingredient {
     private String name;
     private Integer quantity;
-    private Integer measureUnit;
+    private String measureUnit;
     private String description;
 
     public String getName() {
@@ -22,19 +22,19 @@ public class Ingredient {
         this.quantity = quantity;
     }
 
-    public Integer getMeasureUnit() {
-        return measureUnit;
-    }
-
-    public void setMeasureUnit(Integer measureUnit) {
-        this.measureUnit = measureUnit;
-    }
-
     public String getDescription() {
         return description;
     }
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getMeasureUnit() {
+        return measureUnit;
+    }
+
+    public void setMeasureUnit(String measureUnit) {
+        this.measureUnit = measureUnit;
     }
 }

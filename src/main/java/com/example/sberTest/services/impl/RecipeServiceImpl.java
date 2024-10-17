@@ -1,5 +1,6 @@
 package com.example.sberTest.services.impl;
 
+import com.example.sberTest.exceptions.RecipeNotFoundException;
 import com.example.sberTest.models.Ingredient;
 import com.example.sberTest.models.Recipe;
 import com.example.sberTest.models.RecipeIngredientRaw;
@@ -21,6 +22,8 @@ public class RecipeServiceImpl implements RecipeService {
     @Override
     public Recipe getRecipeById(int id) {
         List<RecipeIngredientRaw> queryList = recipeRepository.getRecipeById(id);
+        if (queryList.isEmpty())
+            throw new RecipeNotFoundException();
         List<Ingredient> ingredients = new ArrayList<>();
         Recipe recipe = new Recipe();
         recipe.setName(queryList.getFirst().getName());
@@ -29,10 +32,10 @@ public class RecipeServiceImpl implements RecipeService {
         for (var row : queryList){
             System.out.println(row);
             Ingredient ing = new Ingredient();
-            ing.setName(row.getIngName());
-            ing.setMeasureUnit(row.getMeasureUnit());
+            ing.setName(row.getIngname());
+            ing.setMeasureUnit(row.getMeasureunit());
             ing.setQuantity(row.getQuantity());
-            ing.setDescription(row.getIngDescription());
+            ing.setDescription(row.getIngdescription());
             ingredients.add(ing);
         }
         recipe.setIngredients(ingredients);

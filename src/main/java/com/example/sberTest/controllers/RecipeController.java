@@ -2,6 +2,8 @@ package com.example.sberTest.controllers;
 
 import com.example.sberTest.models.Recipe;
 import com.example.sberTest.services.RecipeService;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,8 +21,11 @@ public class RecipeController {
     }
 
     @GetMapping("/get/{id}")
-    public Recipe getRecipeById(@PathVariable int id) {
-        return recipeService.getRecipeById(id);
+    public ResponseEntity<Recipe> getRecipeById(@PathVariable int id) {
+        Recipe recipe = recipeService.getRecipeById(id);
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .body(recipe);
     }
 
 //    @GetMapping("/get/all")
